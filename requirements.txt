@@ -1,4 +1,5 @@
 streamlit
+authlib
 gspread
 google-auth
-Authlib
+streamlit-option-menu
