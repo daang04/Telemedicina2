@@ -1,5 +1,6 @@
 import streamlit as st
 import json
+from streamlit_option_menu import option_menu
 
 # Cargar roles desde secrets.toml
 roles_data = json.loads(st.secrets["roles_autorizados"]["data"])
@@ -8,7 +9,7 @@ roles_data = json.loads(st.secrets["roles_autorizados"]["data"])
 st.set_page_config(page_title="Plataforma de Trazabilidad", page_icon="🏥", layout="wide")
 
 # Verificar si el usuario está logueado
-if 'user' not in st.session_state:
+if 'user' not in st.session_state or not st.session_state.get('user', {}).get('email'):
     # Mostrar mensaje de bienvenida antes del login
     st.title("Bienvenidos a la Plataforma de Trazabilidad de Insumos Médicos")
     st.write("Por favor, inicia sesión con tu cuenta de Google para continuar.")
