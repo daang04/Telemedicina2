@@ -1,11 +1,11 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import json
 
 # Función de login
 def login_screen():
-    st.title("Authentication")
-    if st.button("Authenticate"):
+    st.title("Bienvenidos a la Plataforma de Trazabilidad de Insumos Médicos")
+    st.write("Por favor, inicie sesión con su cuenta de Google para continuar.")
+    if st.button("Iniciar sesión con Google"):
         st.login("google")
 
 # Mostrar la pantalla de autenticación
@@ -15,18 +15,6 @@ if not st.session_state.get("user"):
 
 # Si ya está logueado, mostrar la plataforma
 email = st.session_state.user.get("email")
-roles_data = json.loads(st.secrets["roles_autorizados"]["data"])
-
-# Verificar si el correo está en los roles autorizados
-if email not in roles_data:
-    st.error("🚫 Acceso denegado. Tu cuenta no está autorizada.")
-    st.stop()
-
-# Obtener el rol y las funciones del correo autenticado
-rol_info = roles_data[email]
-rol_nombre = rol_info[0]
-rol_nivel = rol_info[1]
-funciones = rol_info[2]
 
 # Mostrar la plataforma
 st.title("Plataforma de Trazabilidad de Insumos Médicos")
