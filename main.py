@@ -3,8 +3,50 @@ from streamlit_option_menu import option_menu
 
 # Función de login
 def login_screen():
+    # Estilo de fondo y diseño de la página
+    st.markdown("""
+    <style>
+    .stApp {
+        background: linear-gradient(135deg, #ff5f6d, #ffc3a0) !important;
+        min-height: 100vh !important;
+    }
+    .stButton > button {
+        background-color: #ff6347 !important;
+        border: none !important;
+        border-radius: 50px !important;
+        padding: 18px 40px !important;
+        font-weight: 700 !important;
+        font-size: 16px !important;
+        color: white !important;
+        width: 100% !important;
+        margin-top: 30px !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+    .stButton > button:hover {
+        background-color: #ff4500 !important;
+        box-shadow: 0 15px 40px rgba(255, 69, 0, 0.4) !important;
+        transform: translateY(-5px) !important;
+    }
+    .stTitle {
+        color: white !important;
+        font-weight: 700 !important;
+        font-size: 48px !important;
+        text-align: center;
+    }
+    .stMarkdown {
+        color: white !important;
+        font-size: 18px !important;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+    
+    # Título y mensaje de bienvenida
     st.title("Bienvenidos a la Plataforma de Trazabilidad de Insumos Médicos")
-    st.write("Por favor, inicie sesión con su cuenta de Google para continuar.")
+    st.markdown("Por favor, inicie sesión con su cuenta de Google para continuar.")
+    
+    # Botón de inicio de sesión
     if st.button("Iniciar sesión con Google"):
         st.login("google")
 
