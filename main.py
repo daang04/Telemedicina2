@@ -7,11 +7,11 @@ def login_screen():
     st.markdown("""
     <style>
     .stApp {
-        background: linear-gradient(135deg, #b71c1c, #f5f5f5) !important;
+        background-color: #0097A7 !important;
         min-height: 100vh !important;
     }
     .stButton > button {
-        background-color: #b71c1c !important;
+        background-color: #FF6F00 !important;
         border: none !important;
         border-radius: 50px !important;
         padding: 18px 40px !important;
@@ -23,18 +23,18 @@ def login_screen():
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
     .stButton > button:hover {
-        background-color: #a31518 !important;
-        box-shadow: 0 15px 40px rgba(183, 28, 28, 0.4) !important;
+        background-color: #FF3D00 !important;
+        box-shadow: 0 15px 40px rgba(255, 111, 0, 0.4) !important;
         transform: translateY(-5px) !important;
     }
     .stTitle {
-        color: #b71c1c !important;
+        color: white !important;
         font-weight: 700 !important;
         font-size: 48px !important;
         text-align: center;
     }
     .stMarkdown {
-        color: #b71c1c !important;
+        color: white !important;
         font-size: 18px !important;
         text-align: center;
         margin-bottom: 20px;
@@ -70,7 +70,7 @@ with st.sidebar:
         default_index=0,
         styles={
             "container": {"padding": "0!important", "width": "100%"},
-            "icon": {"color": "#DC143C", "font-size": "18px"},
+            "icon": {"color": "#FF6F00", "font-size": "18px"},
             "nav-link": {
                 "font-size": "16px", 
                 "text-align": "left", 
@@ -78,7 +78,7 @@ with st.sidebar:
                 "padding": "15px 20px",
                 "width": "100%"
             },
-            "nav-link-selected": {"background-color": "#DC143C"},
+            "nav-link-selected": {"background-color": "#FF6F00"},
         }
     )
 
